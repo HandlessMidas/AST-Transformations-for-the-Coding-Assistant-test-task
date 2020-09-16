@@ -59,6 +59,13 @@ fun addBrackets(corners: Boolean, center: Boolean, openBrackets: MutableList<Cha
 }
 
 fun main() {
+    println("Input target string")
+    var string = readLine()
+    while (string == "") {
+        println("Please input not empty string")
+        println("Input target string")
+        string = readLine()
+    }
     var corners: String? = ""
     while (corners != "1" && corners != "2") {
         println("Do you want to put brackets on the outside?\n1 - Yes\n2 - No")
@@ -94,8 +101,6 @@ fun main() {
             }
         }
     }
-    println("Input target string")
-    val string = readLine()
     print(addBrackets(corners = (corners == "1"), center = (center == "1"),
             openBrackets = openBrackets, string = string))
 }
